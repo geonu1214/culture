@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국립남도국악원 - 남도소리와 전통예술의 숨결</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Noto Serif KR & Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gov: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',     // 대한민국 정부 공식 네이비 블루
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f172a',
+              accent: '#0284c7'   // 밝은 청록/하늘 포인트
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans KR"', 'sans-serif'],
+            serif: ['"Noto Serif KR"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .gov-hero-bg {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 58, 138, 0.88) 100%),
+                  url('https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-800 selection:text-white">
+
+  <!-- 상단 중앙정부 공식 식별 바 -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 sm:px-8 flex justify-between items-center border-b border-slate-800">
+    <div class="flex items-center space-x-2.5">
+      <!-- 대한민국 정부 상징 미니 태극 마크 -->
+      <svg class="w-4 h-4 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#ffffff" />
+        <path d="M50 2 A48 48 0 0 1 50 98 A24 24 0 0 1 50 50 A24 24 0 0 0 50 2 Z" fill="#0047A0" />
+        <path d="M50 2 A24 24 0 0 1 50 50 A24 24 0 0 0 50 98 A48 48 0 0 1 50 2 Z" fill="#CD2E3A" />
+      </svg>
+      <span class="font-medium text-slate-200">대한민국 정부 문화체육관광부 국립국악원 소속기관</span>
+    </div>
+    <div class="hidden md:flex items-center space-x-4 text-slate-400">
+      <span><i class="fas fa-location-dot mr-1 text-blue-400"></i> 전남 진도군 임회면 진도대로 3818</span>
+      <span><i class="fas fa-phone mr-1"></i> 대표전화: 061-540-4031~4</span>
+    </div>
+  </div>
+
+  <!-- 메인 헤더 / 네비게이션 -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-blue-900/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- 기관 로고: 대한민국 중앙정부기관 태극 문양 + 기관명 -->
+      <a href="#home" class="flex items-center space-x-3.5 group">
+        <!-- 공식 중앙행정기관 태극 심볼마크 (SVG 백터) -->
+        <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition-transform shrink-0">
+          <svg class="w-9 h-9" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 외곽 원형 및 정부상징 태극 소용돌이 -->
+            <path d="M50 8 A42 42 0 0 1 50 92 A21 21 0 0 1 50 50 A21 21 0 0 0 50 8 Z" fill="#0047A0" />
+            <path d="M50 8 A21 21 0 0 1 50 50 A21 21 0 0 0 50 92 A42 42 0 0 1 50 8 Z" fill="#CD2E3A" />
+            <circle cx="50" cy="50" r="46" stroke="#e2e8f0" stroke-width="2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center space-x-1.5">
+            <span class="text-[10px] uppercase tracking-wider text-blue-700 font-extrabold block leading-none">Ministry of Culture, Sports and Tourism</span>
+          </div>
+          <span class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight font-serif">국립남도국악원</span>
+        </div>
+      </a>
+
+      <!-- 데스크톱 네비게이션 -->
+      <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-slate-700">
+        <a href="#about" class="hover:text-blue-700 transition-colors py-2">원소개</a>
+        <a href="#roles" class="hover:text-blue-700 transition-colors py-2">주요업무</a>
+        <a href="#survey" class="text-blue-800 bg-blue-50 hover:bg-blue-100 px-3.5 py-1.5 rounded-full border border-blue-200 transition-colors flex items-center shadow-sm">
+          <i class="fas fa-hand-holding-heart mr-1.5 text-xs text-blue-600 animate-pulse"></i> 나에게 맞는 혜택 찾기
+        </a>
+        <a href="#trend" class="hover:text-blue-700 transition-colors py-2">예술동향</a>
+        <a href="#news" class="hover:text-blue-700 transition-colors py-2">언론보도</a>
+        <a href="#experience" class="hover:text-blue-700 transition-colors py-2">체험·연수</a>
+        <a href="#location" class="hover:text-blue-700 transition-colors py-2">오시는 길</a>
+      </nav>
+
+      <!-- 우측 빠른 예매 및 길찾기 버튼 -->
+      <div class="hidden sm:flex items-center space-x-2.5">
+        <a href="https://jindo.gugak.go.kr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3.5 py-2 text-xs font-bold text-blue-800 bg-blue-50 hover:bg-blue-100 rounded-lg border border-blue-200 transition">
+          <i class="fas fa-ticket mr-1.5 text-blue-600"></i> 공연예약 (공식)
+        </a>
+        <a href="#location" class="inline-flex items-center px-4 py-2 text-xs sm:text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-lg shadow-sm transition">
+          <i class="fas fa-map-location-dot mr-1.5"></i> 찾아오시는 길
+        </a>
+      </div>
+
+      <!-- 모바일 햄버거 토글 -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 hover:text-blue-800 focus:outline-none" aria-label="메뉴 열기">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- 모바일 메뉴 드롭다운 -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-5 space-y-3">
+      <a href="#survey" class="block text-blue-800 font-bold bg-blue-50 p-2.5 rounded-lg border border-blue-200" onclick="closeMobileMenu()">
+        <i class="fas fa-hand-holding-heart mr-1.5"></i> 나에게 맞는 맞춤 혜택/지원 찾기
+      </a>
+      <a href="#about" class="block text-slate-800 font-semibold hover:text-blue-700 py-1" onclick="closeMobileMenu()">원소개</a>
+      <a href="#roles" class="block text-slate-800 font-semibold hover:text-blue-700 py-1" onclick="closeMobileMenu()">주요 핵심업무</a>
+      <a href="#trend" class="block text-slate-800 font-semibold hover:text-blue-700 py-1" onclick="closeMobileMenu()">최신 예술동향</a>
+      <a href="#news" class="block text-slate-800 font-semibold hover:text-blue-700 py-1" onclick="closeMobileMenu()">언론보도 및 뉴스</a>
+      <a href="#experience" class="block text-slate-800 font-semibold hover:text-blue-700 py-1" onclick="closeMobileMenu()">체험·연수안내</a>
+      <a href="#location" class="block text-slate-800 font-semibold hover:text-blue-700 py-1" onclick="closeMobileMenu()">오시는 길</a>
+      <div class="pt-3 border-t border-slate-100 flex gap-2">
+        <a href="https://jindo.gugak.go.kr" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 bg-blue-700 text-white rounded-lg text-xs font-bold">
+          공식 누리집 바로가기
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 히어로 섹션 -->
+  <section id="home" class="relative gov-hero-bg text-white py-24 md:py-36 overflow-hidden flex items-center">
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#93c5fd_1px,transparent_1px)] [background-size:20px_20px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 border border-blue-400/40 text-blue-200 text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md">
+          <!-- 대한민국 정부 마크 -->
+          <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="48" fill="#ffffff" />
+            <path d="M50 2 A48 48 0 0 1 50 98 A24 24 0 0 1 50 50 A24 24 0 0 0 50 2 Z" fill="#0047A0" />
+            <path d="M50 2 A24 24 0 0 1 50 50 A24 24 0 0 0 50 98 A48 48 0 0 1 50 2 Z" fill="#CD2E3A" />
+          </svg>
+          <span>문화체육관광부 소속 | 민속예술의 본향 진도, 20여 년의 소리 역사</span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6 font-serif">
+          남도 예술의 얼과 신명,<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-sky-100 to-amber-300">
+            세계로 울려 퍼지는 우리 가락
+          </span>
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-200 leading-relaxed mb-8 font-light">
+          판소리와 산조, 민요와 굿음악이 살아 숨 쉬는 전라남도 진도에 자리한 <strong>국립남도국악원</strong>입니다.
+          선조들의 신명과 예술혼을 계승하고, 모든 국민과 세계인이 함께 누리는 고품격 전통예술의 감동을 선사합니다.
+        </p>
+        
+        <div class="flex flex-wrap gap-4">
+          <a href="#survey" class="px-6 py-3.5 bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-600 hover:to-indigo-600 text-white font-extrabold rounded-xl shadow-lg shadow-blue-950/60 transition-all flex items-center border border-blue-400/40">
+            <i class="fas fa-clipboard-question mr-2 text-amber-300"></i> 나의 맞춤 혜택 진단하기
+          </a>
+          <a href="#roles" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold rounded-xl backdrop-blur-sm transition-all flex items-center">
+            주요 업무 보기 <i class="fas fa-arrow-down ml-2 text-sm"></i>
+          </a>
+          <a href="#news" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold rounded-xl backdrop-blur-sm transition-all flex items-center">
+            <i class="fas fa-newspaper mr-2 text-sky-300"></i> 최신 뉴스
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 기관 개요 및 핵심 통계 배너 -->
+  <section id="about" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-14">
+        <span class="text-xs font-bold text-blue-700 uppercase tracking-widest block mb-2 font-serif">ABOUT NATIONAL JINDO GUGAK CENTER</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif">민속악의 보고(寶庫), 진도에서 피어나는 전통문화</h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+          국립남도국악원은 2004년 7월 전라남도 진도군 임회면에 개원한 문화체육관광부 국립국악원 소속의 국립 예술기관입니다.
+          판소리 다섯바탕, 진도씻김굿, 남도들노래, 강강술래 등 무형유산의 보고인 서남해안 문화권에서 전통공연예술을 체계적으로 연구·보존하고 교육 및 체험을 활성화하고 있습니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 mx-auto rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-xl mb-3">
+            <i class="fas fa-landmark"></i>
+          </div>
+          <div class="text-3xl font-black text-blue-900 font-serif">2004년</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-700 mt-1">개원 (20년+ 역사)</div>
+          <p class="text-xs text-slate-500 mt-1">남도의 얼을 잇는 국립기관</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 mx-auto rounded-full bg-sky-100 text-sky-800 flex items-center justify-center text-xl mb-3">
+            <i class="fas fa-theater-masks"></i>
+          </div>
+          <div class="text-3xl font-black text-blue-900 font-serif">1,800+ 회</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-700 mt-1">누적 공연 횟수</div>
+          <p class="text-xs text-slate-500 mt-1">토요상설 및 특별기획</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 mx-auto rounded-full bg-indigo-100 text-indigo-800 flex items-center justify-center text-xl mb-3">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="text-3xl font-black text-blue-900 font-serif">65만+ 명</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-700 mt-1">누적 관람·참가자</div>
+          <p class="text-xs text-slate-500 mt-1">전국민 국악체험과 나들이</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-3">
+            <i class="fas fa-building-columns"></i>
+          </div>
+          <div class="text-3xl font-black text-blue-900 font-serif">진악당 & 달빛</div>
+          <div class="text-xs sm:text-sm font-bold text-slate-700 mt-1">최신 전용공연장</div>
+          <p class="text-xs text-slate-500 mt-1">600석 실내극장 및 야외마당</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 주요 업무 소개 섹션 (국민 눈높이 해설) -->
+  <section id="roles" class="py-20 bg-slate-100/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2 block font-serif">CORE MISSIONS</span>
+        <h2 class="text-3xl font-black text-slate-900 sm:text-4xl font-serif">국민을 위한 주요 업무</h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          국립남도국악원은 남도 전통예술을 보존하고 국민 누구나 문화적 행복을 누릴 수 있도록 다음과 같은 핵심 업무를 추진합니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 1. 상설 및 기획 공연 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-5">
+              <i class="fas fa-music"></i>
+            </div>
+            <span class="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md mb-2 inline-block">품격 높은 상설공연</span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif">토요상설공연 '국악이 좋다'</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              매주 토요일 오후 3시, 남도 전통 성악·기악·무용을 한자리에서 감상할 수 있는 무료 상설공연을 연중 운영하여 지역민과 진도 관광객에게 열린 문화마당을 제공합니다.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+              <li><i class="fas fa-check text-blue-600 mr-1.5"></i> 판소리, 산조, 남도민요, 진도북춤 무대</li>
+              <li><i class="fas fa-check text-blue-600 mr-1.5"></i> 명절·계절별 기획공연 및 초청예술단 합동무대</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. 남도 민속예술 연구 및 자원화 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center text-xl mb-5">
+              <i class="fas fa-scroll"></i>
+            </div>
+            <span class="text-xs font-bold text-sky-800 bg-sky-50 px-2.5 py-1 rounded-md mb-2 inline-block">전통문화 보존·전승</span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif">남도 전통예술 조사 및 학술연구</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              서남해안 도서지역의 구전 민요, 무속음악(굿), 노동요, 향토 소리를 발굴·채록하고 디지털 아카이브로 구축하여 미래 세대에 온전히 전수합니다.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+              <li><i class="fas fa-check text-sky-700 mr-1.5"></i> 남도 무형유산 음원·영상 정밀 기록화</li>
+              <li><i class="fas fa-check text-sky-700 mr-1.5"></i> 학술 심포지엄 개최 및 남도음악 연구서 발간</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. 체류형 문화체험 및 연수 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-800 flex items-center justify-center text-xl mb-5">
+              <i class="fas fa-house-user"></i>
+            </div>
+            <span class="text-xs font-bold text-indigo-800 bg-indigo-50 px-2.5 py-1 rounded-md mb-2 inline-block">체류형 복합체험</span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif">‘보배섬 국악나들이’ & 연수</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              원내 숙박시설(사랑채)에 머물며 국악 공연 관람, 강강술래·악기 배우기, 진도 명소(운림산방, 세방낙조) 탐방을 함께 즐기는 체류형 국악 힐링 프로그램입니다.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+              <li><i class="fas fa-check text-indigo-600 mr-1.5"></i> 가족·동호회 대상 주말 1박 2일 나들이</li>
+              <li><i class="fas fa-check text-indigo-600 mr-1.5"></i> 초·중등 교원 및 공직자 직무 국악연수</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. 국악 대중화 및 교육보급 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl mb-5">
+              <i class="fas fa-chalkboard-user"></i>
+            </div>
+            <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md mb-2 inline-block">생활 속 국악배움</span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif">국악문화학교 & 찾아가는 교실</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              지역 주민과 청소년들이 판소리, 가야금, 대금, 해금, 사물놀이 등을 전문 연주단원에게 체계적으로 배우는 문화 아카데미를 연중 강좌로 운영합니다.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+              <li><i class="fas fa-check text-emerald-600 mr-1.5"></i> 지역 초·중·고교 찾아가는 국악교실</li>
+              <li><i class="fas fa-check text-emerald-600 mr-1.5"></i> 문화소외계층 복지시설 나눔 국악공연</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5. 남도국악의 세계화 및 국제교류 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-800 flex items-center justify-center text-xl mb-5">
+              <i class="fas fa-globe-asia"></i>
+            </div>
+            <span class="text-xs font-bold text-cyan-800 bg-cyan-50 px-2.5 py-1 rounded-md mb-2 inline-block">글로벌 K-Arts</span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif">해외동포·외국인 초청 및 해외공연</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              해외 한인 국악예술인과 차세대 동포를 모국으로 초청해 뿌리교육을 진행하고, 유네스코 인류무형문화유산 등재 남도예술을 세계 무대에 널리 알립니다.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+              <li><i class="fas fa-check text-cyan-600 mr-1.5"></i> 재외동포 및 해외 입양인 국악연수</li>
+              <li><i class="fas fa-check text-cyan-600 mr-1.5"></i> 아시아 민속음악축제 및 해외 교류 순회공연</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 6. 국악 전문연주단 육성 및 창작 활성화 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center text-xl mb-5">
+              <i class="fas fa-person-running"></i>
+            </div>
+            <span class="text-xs font-bold text-blue-900 bg-blue-50 px-2.5 py-1 rounded-md mb-2 inline-block">자체 예술단 운영</span>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif">국립남도국악원 국악연주단 운영</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              기악단, 성악단, 무용단으로 구성된 상임 전문 예술단원들이 정기공연, 창작 국악극, 총체극 등을 기획·제작하여 예술적 완성도를 높입니다.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+              <li><i class="fas fa-check text-blue-600 mr-1.5"></i> 대표 브랜드 창작 작품 개발 및 레퍼토리화</li>
+              <li><i class="fas fa-check text-blue-600 mr-1.5"></i> 전국 국악원(서울 본원·부산·민속) 간 교류 합동무대</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 국민 맞춤형 혜택·지원 체크리스트 겸 진단 설문 섹션 -->
+  <section id="survey" class="py-20 bg-gradient-to-b from-blue-50/70 via-white to-blue-50/40 border-y border-blue-900/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 섹션 헤더 -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-900 text-xs font-black uppercase tracking-wider mb-3">
+          <i class="fas fa-hand-holding-heart text-blue-700"></i>
+          <span>국민 맞춤형 국악 서비스 진단기</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 font-serif leading-tight">
+          "나는 국립남도국악원으로부터<br class="hidden sm:inline"> 어떤 도움을 받을 수 있을까?"
+        </h2>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+          관광객, 가족, 지역주민, 학생, 교원, 국악 전공자까지! 나의 상황과 관심사를 체크하시면 국립남도국악원이 제공하는 <strong>최적의 지원 혜택과 맞춤 프로그램</strong>을 즉시 찾아드립니다.
+        </p>
+      </div>
+
+      <!-- 설문 컨테이너 박스 -->
+      <div class="bg-white rounded-3xl shadow-xl border border-blue-200/80 p-6 sm:p-10 relative overflow-hidden">
+        <!-- 중앙정부기관 상징 색채 블루-레드 포인트 라인 -->
+        <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-900"></div>
+
+        <form id="benefit-survey-form" onsubmit="event.preventDefault(); calculateBenefits();">
+          
+          <!-- STEP 1: 방문자 유형 선택 -->
+          <div class="mb-10">
+            <div class="flex items-center space-x-2.5 mb-4">
+              <span class="w-7 h-7 rounded-full bg-blue-700 text-white font-bold flex items-center justify-center text-xs">1</span>
+              <h3 class="text-lg font-bold text-slate-900 font-serif">귀하는 어떤 분이신가요? (주요 대상 1개 선택)</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <label class="cursor-pointer border border-slate-200 rounded-xl p-4 flex items-start space-x-3 hover:border-blue-500 hover:bg-blue-50/40 transition has-[:checked]:border-blue-700 has-[:checked]:bg-blue-50/70 has-[:checked]:ring-2 has-[:checked]:ring-blue-700">
+                <input type="radio" name="user_type" value="tourist" class="mt-1 text-blue-700 focus:ring-blue-600" checked>
+                <div>
+                  <div class="font-bold text-sm text-slate-900"><i class="fas fa-camera text-blue-700 mr-1.5"></i> 진도/남도 여행 관광객</div>
+                  <div class="text-xs text-slate-500 mt-0.5">주말 나들이, 볼거리·공연·숙박을 찾는 여행자</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer border border-slate-200 rounded-xl p-4 flex items-start space-x-3 hover:border-blue-500 hover:bg-blue-50/40 transition has-[:checked]:border-blue-700 has-[:checked]:bg-blue-50/70 has-[:checked]:ring-2 has-[:checked]:ring-blue-700">
+                <input type="radio" name="user_type" value="family" class="mt-1 text-blue-700 focus:ring-blue-600">
+                <div>
+                  <div class="font-bold text-sm text-slate-900"><i class="fas fa-people-roof text-indigo-700 mr-1.5"></i> 자녀를 둔 가족 단위</div>
+                  <div class="text-xs text-slate-500 mt-0.5">아이들과 함께하는 전통문화 체험 및 휴양</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer border border-slate-200 rounded-xl p-4 flex items-start space-x-3 hover:border-blue-500 hover:bg-blue-50/40 transition has-[:checked]:border-blue-700 has-[:checked]:bg-blue-50/70 has-[:checked]:ring-2 has-[:checked]:ring-blue-700">
+                <input type="radio" name="user_type" value="local" class="mt-1 text-blue-700 focus:ring-blue-600">
+                <div>
+                  <div class="font-bold text-sm text-slate-900"><i class="fas fa-house-chimney-user text-emerald-700 mr-1.5"></i> 진도 및 인근 지역주민</div>
+                  <div class="text-xs text-slate-500 mt-0.5">취미 강좌, 문화생활, 악기 강습 희망자</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer border border-slate-200 rounded-xl p-4 flex items-start space-x-3 hover:border-blue-500 hover:bg-blue-50/40 transition has-[:checked]:border-blue-700 has-[:checked]:bg-blue-50/70 has-[:checked]:ring-2 has-[:checked]:ring-blue-700">
+                <input type="radio" name="user_type" value="educator" class="mt-1 text-blue-700 focus:ring-blue-600">
+                <div>
+                  <div class="font-bold text-sm text-slate-900"><i class="fas fa-chalkboard-user text-sky-700 mr-1.5"></i> 교원·공직자·단체</div>
+                  <div class="text-xs text-slate-500 mt-0.5">직무연수 학점 인정, 기관 단체 문화연수</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer border border-slate-200 rounded-xl p-4 flex items-start space-x-3 hover:border-blue-500 hover:bg-blue-50/40 transition has-[:checked]:border-blue-700 has-[:checked]:bg-blue-50/70 has-[:checked]:ring-2 has-[:checked]:ring-blue-700">
+                <input type="radio" name="user_type" value="artist" class="mt-1 text-blue-700 focus:ring-blue-600">
+                <div>
+                  <div class="font-bold text-sm text-slate-900"><i class="fas fa-drum text-purple-700 mr-1.5"></i> 국악 전공생 및 예술인</div>
+                  <div class="text-xs text-slate-500 mt-0.5">남도소리·굿음악 심층연구, 무대 기회, 음원 자료</div>
+                </div>
+              </label>
+
+              <label class="cursor-pointer border border-slate-200 rounded-xl p-4 flex items-start space-x-3 hover:border-blue-500 hover:bg-blue-50/40 transition has-[:checked]:border-blue-700 has-[:checked]:bg-blue-50/70 has-[:checked]:ring-2 has-[:checked]:ring-blue-700">
+                <input type="radio" name="user_type" value="global" class="mt-1 text-blue-700 focus:ring-blue-600">
+                <div>
+                  <div class="font-bold text-sm text-slate-900"><i class="fas fa-globe text-cyan-700 mr-1.5"></i> 재외동포 및 외국인</div>
+                  <div class="text-xs text-slate-500 mt-0.5">모국 전통문화 배움, 해외 한인 예술교류</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2: 나의 희망 사항 (복수 선택 체크리스트) -->
+          <div class="mb-10">
+            <div class="flex items-center space-x-2.5 mb-2">
+              <span class="w-7 h-7 rounded-full bg-blue-700 text-white font-bold flex items-center justify-center text-xs">2</span>
+              <h3 class="text-lg font-bold text-slate-900 font-serif">현재 관심 있거나 필요한 혜택을 모두 체크해 주세요. (중복 선택 가능)</h3>
+            </div>
+            <p class="text-xs text-slate-500 mb-4 pl-9">선택하신 항목들을 종합 분석하여 가장 적합한 제도와 혜택을 매칭합니다.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-1 sm:pl-9">
+              
+              <label class="flex items-center space-x-3 p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/40 cursor-pointer transition">
+                <input type="checkbox" name="interest" value="free_show" class="w-4 h-4 text-blue-700 rounded focus:ring-blue-600" checked>
+                <span class="text-sm text-slate-800 font-medium">부담 없는 <strong>무료 고품격 국악 공연</strong> 관람 희망</span>
+              </label>
+
+              <label class="flex items-center space-x-3 p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/40 cursor-pointer transition">
+                <input type="checkbox" name="interest" value="stay" class="w-4 h-4 text-blue-700 rounded focus:ring-blue-600">
+                <span class="text-sm text-slate-800 font-medium">전통 한옥 숙소(사랑채)에서 <strong>1박 2일 체류 힐링</strong></span>
+              </label>
+
+              <label class="flex items-center space-x-3 p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/40 cursor-pointer transition">
+                <input type="checkbox" name="interest" value="learn_instrument" class="w-4 h-4 text-blue-700 rounded focus:ring-blue-600">
+                <span class="text-sm text-slate-800 font-medium">가야금, 해금, 판소리, 사물놀이 등 <strong>악기/소리 배우기</strong></span>
+              </label>
+
+              <label class="flex items-center space-x-3 p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/40 cursor-pointer transition">
+                <input type="checkbox" name="interest" value="shuttle" class="w-4 h-4 text-blue-700 rounded focus:ring-blue-600">
+                <span class="text-sm text-slate-800 font-medium">자가용 없이 방문 가능한 <strong>대중교통 & 무료 셔틀버스</strong></span>
+              </label>
+
+              <label class="flex items-center space-x-3 p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/40 cursor-pointer transition">
+                <input type="checkbox" name="interest" value="credit_course" class="w-4 h-4 text-blue-700 rounded focus:ring-blue-600">
+                <span class="text-sm text-slate-800 font-medium">교원 직무연수 시간 인정 또는 <strong>공직자 전문 교육</strong></span>
+              </label>
+
+              <label class="flex items-center space-x-3 p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/40 cursor-pointer transition">
+                <input type="checkbox" name="interest" value="jindo_tour" class="w-4 h-4 text-blue-700 rounded focus:ring-blue-600">
+                <span class="text-sm text-slate-800 font-medium">운림산방, 세방낙조, 신비의 바닷길 등 <strong>진도 명소 연계 탐방</strong></span>
+              </label>
+
+              <label class="flex items-center space-x-3 p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/40 cursor-pointer transition">
+                <input type="checkbox" name="interest" value="academic_gut" class="w-4 h-4 text-blue-700 rounded focus:ring-blue-600">
+                <span class="text-sm text-slate-800 font-medium">진도씻김굿, 향토소리 학술자료 및 <strong>무료 음원/영상 열람</strong></span>
+              </label>
+
+              <label class="flex items-center space-x-3 p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/40 cursor-pointer transition">
+                <input type="checkbox" name="interest" value="visit_school" class="w-4 h-4 text-blue-700 rounded focus:ring-blue-600">
+                <span class="text-sm text-slate-800 font-medium">학교나 복지시설로 찾아오는 <strong>방문 국악교실 및 나눔공연</strong></span>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- 진단하기 버튼 -->
+          <div class="text-center pt-4 border-t border-slate-100">
+            <button type="submit" class="w-full sm:w-auto px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-black text-base rounded-2xl shadow-lg shadow-blue-950/30 transition duration-200 transform hover:-translate-y-0.5 inline-flex items-center justify-center space-x-2">
+              <i class="fas fa-wand-magic-sparkles text-amber-300"></i>
+              <span>나의 맞춤 혜택 & 지원 프로그램 확인하기</span>
+            </button>
+            <button type="button" onclick="resetSurvey()" class="mt-3 sm:mt-0 sm:ml-3 px-5 py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold text-sm rounded-2xl transition">
+              초기화
+            </button>
+          </div>
+
+        </form>
+
+        <!-- 진단 결과 표시 영역 (동적 렌더링) -->
+        <div id="survey-result" class="hidden mt-10 pt-8 border-t-2 border-dashed border-blue-300 animate-fadeIn">
+          <!-- JS로 동적 주입 -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 최신 주요 동향 및 시그니처 축제 -->
+  <section id="trend" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2 block font-serif">RECENT TRENDS & HIGHLIGHTS</span>
+        <h2 class="text-3xl font-black text-slate-900 sm:text-4xl font-serif">국립남도국악원의 최근 주요 동향</h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          개원 20주년을 거쳐 ‘국악으로 행복한 열린 문화공간’으로 도약하는 국립남도국악원의 핵심 행보입니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+        
+        <!-- 하이라이트 1: 굿음악축제 -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50/40 rounded-3xl p-8 border border-blue-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-2 text-blue-800 font-bold text-xs uppercase mb-3">
+              <i class="fas fa-fire-flame-curved text-blue-600"></i>
+              <span>대표 시그니처 축제</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3 font-serif">
+              대한민국 굿음악의 정수, ‘굿음악축제’
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              인류 보편의 소망과 치유의 의례인 '굿'을 예술의 경지로 승화시킨 국악원의 대표 브랜드 축제입니다.
+              국가무형유산 진도씻김굿을 필두로 동해안별신굿, 제주 칠머리당 영등굿, 저승혼사굿 등 전국의 명인들을 초청해 학술대회와 신명나는 판을 함께 펼칩니다.
+            </p>
+            <div class="bg-white p-4 rounded-xl border border-blue-200/80 space-y-2">
+              <div class="flex items-center text-xs text-slate-700 font-medium">
+                <i class="fas fa-calendar-check text-blue-700 mr-2"></i> 매년 초여름(6~7월) 원내 진악당 및 달빛마당
+              </div>
+              <div class="flex items-center text-xs text-slate-700 font-medium">
+                <i class="fas fa-tags text-blue-700 mr-2"></i> 전석 무료관람 및 학술강연·의례시연 결합
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-blue-200/60 flex items-center justify-between text-xs">
+            <span class="text-blue-900 font-bold">#진도씻김굿 #동해안별신굿 #치유와화합</span>
+            <span class="text-slate-500">누적 관객 수만 명 관람</span>
+          </div>
+        </div>
+
+        <!-- 하이라이트 2: 공연장 진악당 리모델링 및 상설공연 확대 -->
+        <div class="bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-3xl p-8 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-2 text-sky-400 font-bold text-xs uppercase mb-3">
+              <i class="fas fa-sparkles"></i>
+              <span>시설 혁신 & 공연 다변화</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 font-serif">
+              진악당 새 단장과 토요상설 '국악이 좋다' 대폭 확대
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              주 공연장인 ‘진악당’의 무대 음향과 조명 시설을 최신 디지털 스마트 환경으로 개선하여, 관객들이 가야금 선율의 섬세한 떨림과 판소리의 깊은 울림을 더욱 생생하게 체감할 수 있도록 관람 환경을 획기적으로 개선했습니다.
+            </p>
+            <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15 space-y-2">
+              <div class="flex items-center text-xs text-slate-200 font-medium">
+                <i class="fas fa-bullhorn text-sky-400 mr-2"></i> 연간 20~30회 이상 토요상설공연 라인업 대폭 확충
+              </div>
+              <div class="flex items-center text-xs text-slate-200 font-medium">
+                <i class="fas fa-lightbulb text-sky-400 mr-2"></i> 청년 국악인 발굴 대학국악제 ‘요즘국악 ON’ 등 신규 기획
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+            <span class="text-sky-300 font-bold">#스마트음향 #열린공간 #무료관람지원</span>
+            <span class="text-slate-400">진도읍 연계 셔틀버스 운행</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 최신 뉴스 기사 및 보도 섹션 -->
+  <section id="news" class="py-20 bg-slate-100/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2 block font-serif">LATEST PRESS & NEWS</span>
+          <h2 class="text-3xl font-black text-slate-900 font-serif">국립남도국악원 최신 소식 및 언론 보도</h2>
+          <p class="mt-2 text-slate-600 text-sm">
+            언론사들이 집중 조명한 국립남도국악원의 주요 사업과 공연 소식을 확인해 보세요.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <a href="https://jindo.gugak.go.kr" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm font-bold text-blue-800 hover:text-blue-700 inline-flex items-center">
+            공식 보도자료 게시판 바로가기 <i class="fas fa-external-link-alt ml-1.5 text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 기사 카드 그리드 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 기사 1 -->
+        <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 font-bold">전남일보 보도</span>
+              <span>2025년 동향</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug font-serif hover:text-blue-800 transition">
+              국립남도국악원 "국악으로 행복한 열린 문화 공간 조성" 본격화
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 mb-4 leading-relaxed">
+              남도국악원이 신임 사업계획을 발표하고 남도국악의 세계화, 토요상설공연 ‘국악이 좋다’ 확대, 주 공연장 진악당 시설 개선 및 군민·국민 맞춤형 복합 문화예술 프로그램 운영 계획을 밝혔습니다.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-400"><i class="far fa-newspaper mr-1"></i> 문화/기획</span>
+            <a href="https://www.jnilbo.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-700 hover:underline flex items-center">
+              기사 자세히 보기 <i class="fas fa-arrow-up-right-from-square ml-1 text-[11px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 기사 2 -->
+        <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 font-bold">뉴시스 보도</span>
+              <span>2024~2025</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug font-serif hover:text-blue-800 transition">
+              진도서 즐기는 힐링, ‘보배섬 국악나들이’ 특별체험 참가자 인기
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 mb-4 leading-relaxed">
+              가족 단위와 동호인들이 진도의 자연과 국악을 함께 만끽할 수 있는 국립남도국악원 ‘보배섬 국악나들이’가 여름 휴가철 및 연말연시 새해맞이 특별 프로그램으로 성황리에 운영되었습니다.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-400"><i class="far fa-newspaper mr-1"></i> 문화/체험</span>
+            <a href="https://www.newsis.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-700 hover:underline flex items-center">
+              기사 자세히 보기 <i class="fas fa-arrow-up-right-from-square ml-1 text-[11px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 기사 3 -->
+        <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 font-bold">한국경제/K-Spirit</span>
+              <span>대표 축제</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug font-serif hover:text-blue-800 transition">
+              국립남도국악원 개원 20주년 기념 ‘굿음악축제 - 운수대통 만사형통’ 개최
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 mb-4 leading-relaxed">
+              개원 20주년을 맞아 매주 토요일 동해안별신굿, 제주 칠머리당 영등굿 초감제, 진도씻김굿 등 전국 8도 명인들이 총출동하여 한국의 전통 굿 음악의 진수를 펼쳤습니다.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-400"><i class="far fa-newspaper mr-1"></i> 전통예술/축제</span>
+            <a href="https://www.hankyung.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-700 hover:underline flex items-center">
+              기사 자세히 보기 <i class="fas fa-arrow-up-right-from-square ml-1 text-[11px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 기사 4 -->
+        <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-800 font-bold">국악타임즈</span>
+              <span>기획공연</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug font-serif hover:text-blue-800 transition">
+              토요상설 ‘국악이 좋다’ 채수정 소리단 초청공연 <뿌리깊은 소리> 성료
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 mb-4 leading-relaxed">
+              판소리와 남도소리의 올곧은 맥을 잇는 명창들의 무대와 진도씻김굿과의 협연 무대가 관객들에게 깊은 울림과 찬사를 이끌어냈습니다.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-400"><i class="far fa-newspaper mr-1"></i> 상설공연</span>
+            <a href="https://www.gugaktimes.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-700 hover:underline flex items-center">
+              기사 자세히 보기 <i class="fas fa-arrow-up-right-from-square ml-1 text-[11px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 기사 5 -->
+        <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold">통합뉴스/지역언론</span>
+              <span>전국 국악원 교류</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 leading-snug font-serif hover:text-blue-800 transition">
+              국립남도·민속·부산국악원 3개원 안무자전 기획공연 <디딤> 무대
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 mb-4 leading-relaxed">
+              각 지역 국립국악원의 상임 안무자들이 모여 진주교방굿거리춤, 살풀이춤, 진도북춤, 호남검무 등 전통 무용의 최고 기량을 겨루고 협력하는 특별한 무대를 선보였습니다.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-400"><i class="far fa-newspaper mr-1"></i> 전통무용</span>
+            <a href="https://www.tonghabnews.com" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-700 hover:underline flex items-center">
+              기사 자세히 보기 <i class="fas fa-arrow-up-right-from-square ml-1 text-[11px]"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 기사 6: 공식 포털 검색 연결 -->
+        <article class="bg-gradient-to-br from-blue-900 to-indigo-950 text-white rounded-2xl p-6 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-2 text-sky-300 text-xs font-bold mb-3">
+              <i class="fas fa-magnifying-glass"></i>
+              <span>실시간 뉴스 검색</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2 leading-snug font-serif">
+              포털에서 실시간 '국립남도국악원' 뉴스 더보기
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
+              네이버, 다음 등 주요 포털 뉴스 검색을 통해 현재 보도되고 있는 공연 소식과 축제 리뷰를 실시간으로 확인하실 수 있습니다.
+            </p>
+          </div>
+          <div class="space-y-2 pt-2">
+            <a href="https://search.naver.com/search.naver?where=news&query=국립남도국악원" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg transition">
+              <i class="fas fa-search mr-1.5"></i> 네이버 뉴스 실시간 검색
+            </a>
+            <a href="https://search.daum.net/search?w=news&q=국립남도국악원" target="_blank" rel="noopener noreferrer" class="block w-full text-center py-2 bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs rounded-lg transition">
+              <i class="fas fa-search mr-1.5"></i> 다음(Daum) 뉴스 실시간 검색
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 국민을 위한 체험 및 관람 가이드 -->
+  <section id="experience" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2 block font-serif">VISITOR GUIDE</span>
+        <h2 class="text-3xl font-black text-slate-900 sm:text-4xl font-serif">관람 및 프로그램 참여 꿀팁</h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          진도 여행과 함께 국악을 만끽할 수 있는 방법을 알기 쉽게 정리해 드립니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-blue-50/50 border border-blue-200/70">
+          <div class="text-2xl text-blue-800 mb-3"><i class="fas fa-ticket-simple"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 font-serif">1. 토요상설은 전석 무료!</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            매주 토요일 오후 3시 공연은 전석 무료로 진행됩니다. 좋은 좌석 선점을 위해 국립남도국악원 누리집 사전 온라인 예약 또는 현장 수령을 권장합니다.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-blue-50/50 border border-blue-200/70">
+          <div class="text-2xl text-blue-800 mb-3"><i class="fas fa-van-shuttle"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 font-serif">2. 진도읍 무료 셔틀버스</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            토요상설공연 관람객을 위해 진도읍사무소 앞과 국악원을 오가는 무료 셔틀버스를 운행합니다. 차량이 없어도 대중교통으로 편리하게 오실 수 있습니다.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-blue-50/50 border border-blue-200/70">
+          <div class="text-2xl text-blue-800 mb-3"><i class="fas fa-bed"></i></div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2 font-serif">3. 사랑채 숙박 연계 나들이</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            '보배섬 국악나들이'는 국악원 내 전통 숙소인 '사랑채' 숙박과 조식이 포함되어 있어, 온 가족 힐링 진도 여행 코스로 가장 인기가 높습니다.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 찾아오시는 길 (인터랙티브 안내) -->
+  <section id="location" class="py-20 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-900 text-xs font-bold mb-3">
+          <i class="fas fa-map-marked-alt"></i>
+          <span>DIRECTIONS & LOCATION</span>
+        </div>
+        <h2 class="text-3xl font-black text-slate-900 sm:text-4xl font-serif">국립남도국악원 찾아오시는 길</h2>
+        <p class="mt-2 text-slate-600 text-sm sm:text-base">
+          다도해의 푸른 바다와 산세가 어우러진 진도군 임회면의 국악의 전당으로 초대합니다.
+        </p>
+      </div>
+
+      <!-- 본관 안내 카드 -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+        
+        <!-- 상단 주소 및 바로가기 바 -->
+        <div class="p-6 md:p-8 border-b border-slate-200 flex flex-wrap justify-between items-center gap-4 bg-slate-50/70">
+          <div class="flex items-center space-x-3.5">
+            <!-- 정부기관 마크 소형 -->
+            <svg class="w-8 h-8 shrink-0 hidden sm:block" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 8 A42 42 0 0 1 50 92 A21 21 0 0 1 50 50 A21 21 0 0 0 50 8 Z" fill="#0047A0" />
+              <path d="M50 8 A21 21 0 0 1 50 50 A21 21 0 0 0 50 92 A42 42 0 0 1 50 8 Z" fill="#CD2E3A" />
+            </svg>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-1 bg-blue-700 text-white rounded text-xs font-bold">진도 본원</span>
+                <h3 class="text-2xl font-bold text-slate-900 font-serif">국립남도국악원</h3>
+              </div>
+              <p class="text-slate-600 text-sm mt-1.5 flex items-center">
+                <i class="fas fa-location-dot text-blue-700 mr-2"></i>
+                전라남도 진도군 임회면 진도대로 3818 (하미길 39) (우편번호: 58944)
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a href="tel:061-540-4031" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs sm:text-sm font-bold rounded-lg transition inline-flex items-center">
+              <i class="fas fa-phone mr-1.5 text-blue-700"></i> 대표전화 061-540-4031~4
+            </a>
+            <a href="https://map.kakao.com/link/search/국립남도국악원" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-slate-900 text-xs sm:text-sm font-bold rounded-lg transition inline-flex items-center">
+              <i class="fas fa-map mr-1.5"></i> 카카오맵 길찾기
+            </a>
+            <a href="https://map.naver.com/v5/search/국립남도국악원" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold rounded-lg transition inline-flex items-center">
+              <i class="fas fa-location-arrow mr-1.5"></i> 네이버지도 길찾기
+            </a>
+          </div>
+        </div>
+
+        <!-- 교통편 3개 컬럼 상세 안내 -->
+        <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- 승용차 -->
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/90">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center text-lg">
+                <i class="fas fa-car"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 text-base font-serif">자가용 승용차 이용</h4>
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-3">
+              <li>
+                <strong class="text-slate-800 block">서해안/남해안 고속도로 방면</strong>
+                목포IC 또는 영암·해남 경유 → 국도 18호선 따라 진도대교 통과.
+              </li>
+              <li>
+                <strong class="text-slate-800 block">진도대교 통과 후 경로</strong>
+                진도읍 우회도로 → 임회면(팽목항 방면)으로 약 20~25분 직진 시 우측 위치.
+              </li>
+              <li>
+                <span class="text-blue-700 font-semibold"><i class="fas fa-square-parking mr-1"></i> 대형버스 및 승용차 전용 무료 주차장 완비</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 대중교통 및 시외버스 -->
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/90">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center text-lg">
+                <i class="fas fa-bus"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 text-base font-serif">고속/시외버스 및 농어촌버스</h4>
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-3">
+              <li>
+                <strong class="text-slate-800 block">서울·광주 → 진도공용터미널</strong>
+                서울 센트럴시티(강남) 또는 광주 유스퀘어에서 진도행 직행버스 탑승.
+              </li>
+              <li>
+                <strong class="text-slate-800 block">진도터미널에서 원내 이동</strong>
+                임회·팽목 방면 군내버스 이용(약 30분) 또는 택시 이용(약 20분 소요).
+              </li>
+              <li>
+                <span class="text-slate-700 font-medium"><i class="fas fa-info-circle mr-1"></i> 버스 배차시간은 진도터미널(061-544-2121) 확인</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- KTX 및 셔틀버스 -->
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/90">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-800 flex items-center justify-center text-lg">
+                <i class="fas fa-train-subway"></i>
+              </div>
+              <h4 class="font-bold text-slate-900 text-base font-serif">KTX 목포역 연계 & 셔틀</h4>
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-3">
+              <li>
+                <strong class="text-slate-800 block">목포역(KTX/SRT) 이용 시</strong>
+                목포역 하차 후 목포종합버스터미널로 이동(시내버스 1번 등) → 진도행 시외버스 탑승(약 50분).
+              </li>
+              <li>
+                <strong class="text-slate-800 block">토요상설 전용 셔틀버스</strong>
+                토요일 오후 공연 시각에 맞추어 진도읍사무소 앞 ↔ 국악원 간 무료 셔틀버스 왕복 운행.
+              </li>
+              <li>
+                <span class="text-indigo-800 font-semibold"><i class="fas fa-phone-volume mr-1"></i> 셔틀 상세 시간 문의: 061-540-4033</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-14 border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-slate-800">
+        
+        <div>
+          <div class="flex items-center space-x-3 text-white font-bold text-base mb-3 font-serif">
+            <!-- 정부 상징 미니 로고 -->
+            <svg class="w-6 h-6 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="48" fill="#ffffff" />
+              <path d="M50 2 A48 48 0 0 1 50 98 A24 24 0 0 1 50 50 A24 24 0 0 0 50 2 Z" fill="#0047A0" />
+              <path d="M50 2 A24 24 0 0 1 50 50 A24 24 0 0 0 50 98 A48 48 0 0 1 50 2 Z" fill="#CD2E3A" />
+            </svg>
+            <span>국립남도국악원</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed mb-4">
+            대한민국 정부 문화체육관광부 국립국악원 소속 기관으로서 남도 전통공연예술을 보존·전승하고 국민의 문화향유 기회를 확대하는 국가 대표 전통예술 기관입니다.
+          </p>
+          <div class="flex space-x-3">
+            <a href="https://jindo.gugak.go.kr" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-blue-700 hover:text-white transition" title="공식홈페이지"><i class="fas fa-globe"></i></a>
+            <a href="https://www.youtube.com/channel/UCb2VbUj_qYpU2B0wK1aX_Sw" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-red-600 hover:text-white transition" title="유튜브 국립남도국악원"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/jindogugak" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition" title="페이스북"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3 font-serif">안내 및 문의전화</h4>
+          <p class="mb-2"><strong class="text-slate-200">[원내 주소]</strong> 전라남도 진도군 임회면 진도대로 3818 (우: 58944)</p>
+          <p class="mb-1"><strong class="text-slate-200">[대표안내]</strong> 061-540-4031 ~ 4 | 팩스: 061-540-4045</p>
+          <p class="mb-1"><strong class="text-slate-200">[공연예약 및 문의]</strong> 061-540-4033 / 4042</p>
+          <p><strong class="text-slate-200">[체험·연수 문의]</strong> 061-540-4038</p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-bold text-sm mb-3 font-serif">관련 국악·문화 기관</h4>
+          <ul class="space-y-2">
+            <li><a href="https://www.mcst.go.kr" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-angle-right mr-1.5"></i> 문화체육관광부 (MCST)</a></li>
+            <li><a href="https://www.gugak.go.kr" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-angle-right mr-1.5"></i> 국립국악원 (서울 본원)</a></li>
+            <li><a href="https://namwon.gugak.go.kr" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-angle-right mr-1.5"></i> 국립민속국악원 (남원)</a></li>
+            <li><a href="https://busan.gugak.go.kr" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition flex items-center"><i class="fas fa-angle-right mr-1.5"></i> 국립부산국악원 (부산)</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 gap-2">
+        <p>&copy; National Jindo Gugak Center. All Rights Reserved. (대한민국 정부 문화체육관광부 소속기관)</p>
+        <p>더블클릭으로 바로 실행 가능한 스탠드얼론 웹 애플리케이션입니다.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 자바스크립트 로직 -->
+  <script>
+    // 모바일 햄버거 메뉴 토글
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+    }
+
+    // 설문 초기화
+    function resetSurvey() {
+      document.getElementById('benefit-survey-form').reset();
+      const resultArea = document.getElementById('survey-result');
+      resultArea.classList.add('hidden');
+      resultArea.innerHTML = '';
+    }
+
+    // 설문 및 체크리스트 진단 알고리즘
+    function calculateBenefits() {
+      const form = document.getElementById('benefit-survey-form');
+      const selectedType = form.elements['user_type'].value;
+      const checkedInterests = Array.from(form.elements['interest'])
+                                  .filter(item => item.checked)
+                                  .map(item => item.value);
+
+      const typeNames = {
+        'tourist': '진도/남도 여행 관광객',
+        'family': '자녀를 둔 가족 단위',
+        'local': '진도 및 인근 지역주민',
+        'educator': '교원·공직자·문화단체',
+        'artist': '국악 전공생 및 예술인',
+        'global': '재외동포 및 외국인'
+      };
+
+      const benefits = [];
+
+      if (selectedType === 'tourist' || checkedInterests.includes('free_show') || checkedInterests.includes('shuttle')) {
+        benefits.push({
+          badge: '국민 문화향유 혜택',
+          badgeColor: 'bg-blue-100 text-blue-800',
+          icon: 'fa-ticket',
+          title: '토요상설공연 전석 무료 관람 & 진도읍 셔틀 무료 탑승',
+          desc: '비용 부담 없이 매주 토요일 오후 3시, 남도 최고의 명인·명창 무대를 무료로 감상하실 수 있습니다. 진도읍사무소 앞 무료 셔틀버스로 차량 없이도 편안하게 오실 수 있습니다.',
+          action: '상설공연 안내 보기',
+          link: '#roles'
+        });
+      }
+
+      if (selectedType === 'family' || selectedType === 'tourist' || checkedInterests.includes('stay') || checkedInterests.includes('jindo_tour')) {
+        benefits.push({
+          badge: '체류형 힐링 지원',
+          badgeColor: 'bg-sky-100 text-sky-800',
+          icon: 'fa-house-chimney-window',
+          title: '‘보배섬 국악나들이’ 숙박(사랑채) + 명소탐방 패키지',
+          desc: '다도해가 내려다보이는 국악원 내 전통 숙소인 사랑채 숙박, 남도 전통밥상, 강강술래·악기 체험, 운림산방·세방낙조 등 진도 명소 투어가 결합된 원스톱 국악 여행을 지원받으실 수 있습니다.',
+          action: '체험 안내 확인',
+          link: '#experience'
+        });
+      }
+
+      if (selectedType === 'local' || checkedInterests.includes('learn_instrument')) {
+        benefits.push({
+          badge: '생활문화 지원',
+          badgeColor: 'bg-emerald-100 text-emerald-800',
+          icon: 'fa-guitar',
+          title: '국악문화학교 - 상임 연주단원 직강 국악 강습',
+          desc: '가야금, 해금, 판소리, 사물놀이, 남도민요 등 국립남도국악원 상임 예술단원에게 직접 기초부터 심화까지 저렴한 비용으로 배우실 수 있는 평생교육 혜택입니다.',
+          action: '교육업무 보기',
+          link: '#roles'
+        });
+      }
+
+      if (selectedType === 'educator' || checkedInterests.includes('credit_course')) {
+        benefits.push({
+          badge: '교육/공직 지원',
+          badgeColor: 'bg-indigo-100 text-indigo-800',
+          icon: 'fa-graduation-cap',
+          title: '전국 교원 직무연수(연수학점 인정) 및 기관 문화연수',
+          desc: '방학 기간 초·중등 교원을 대상으로 국악 실기 및 지도법 직무연수(이수시간 부여)를 운영하며, 중앙부처·지자체 공직자 및 기업을 위한 맞춤형 전통문화 연수 프로그램을 제공합니다.',
+          action: '연수 문의: 061-540-4038',
+          link: 'tel:061-540-4038'
+        });
+      }
+
+      if (selectedType === 'artist' || checkedInterests.includes('academic_gut')) {
+        benefits.push({
+          badge: '학술·예술인 지원',
+          badgeColor: 'bg-purple-100 text-purple-800',
+          icon: 'fa-book-open-reader',
+          title: '남도 무형유산 아카이브 열람 & 굿음악축제 학술 심포지엄',
+          desc: '진도씻김굿, 서남해안 도서지역 구전 민요 채록 음원과 영상 자료를 무료로 열람하실 수 있으며, 매년 개최되는 굿음악축제 학술회의 참여 및 대학 국악제 무대 데뷔 기회를 지원받으실 수 있습니다.',
+          action: '최신 동향 보기',
+          link: '#trend'
+        });
+      }
+
+      if (selectedType === 'global') {
+        benefits.push({
+          badge: '글로벌 문화교류 지원',
+          badgeColor: 'bg-cyan-100 text-cyan-800',
+          icon: 'fa-globe',
+          title: '해외동포·외국인 모국 전통예술 집중연수 프로그램',
+          desc: '재외동포 예술인과 청소년, 국내 거주 외국인을 위한 남도 소리·춤 집중 전수 프로그램 및 다국어 통역 안내와 전통문화 멘토링 서비스를 제공합니다.',
+          action: '공식 홈페이지 문의',
+          link: 'https://jindo.gugak.go.kr'
+        });
+      }
+
+      if (checkedInterests.includes('visit_school')) {
+        benefits.push({
+          badge: '찾아가는 문화복지',
+          badgeColor: 'bg-blue-100 text-blue-900',
+          icon: 'fa-bus-simple',
+          title: '도서벽지 학교 및 복지시설 ‘찾아가는 국악교실·나눔공연’',
+          desc: '지리적·여건상 국악원 방문이 어려운 농어촌 학교와 복지관으로 국악연주단이 직접 찾아가 눈높이 해설과 함께 신명나는 공연과 악기 만지기 체험을 선물합니다.',
+          action: '사업 문의: 061-540-4033',
+          link: 'tel:061-540-4033'
+        });
+      }
+
+      const resultArea = document.getElementById('survey-result');
+      let html = `
+        <div class="bg-blue-50/70 p-6 sm:p-7 rounded-2xl border border-blue-200 mb-6">
+          <div class="flex items-center space-x-2 text-blue-800 font-bold text-xs uppercase mb-1">
+            <i class="fas fa-check-circle"></i>
+            <span>진단 완료</span>
+          </div>
+          <h4 class="text-xl sm:text-2xl font-black text-slate-900 font-serif">
+            <span class="text-blue-800 underline decoration-sky-400 decoration-4 underline-offset-4">${typeNames[selectedType]}</span> 님을 위한 맞춤 혜택 ${benefits.length}가지
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2">
+            국립남도국악원은 국민의 문화 권리를 보장하기 위해 다양한 국비 지원 및 무료 혜택 프로그램을 상시 가동하고 있습니다.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      `;
+
+      benefits.forEach((item, idx) => {
+        html += `
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-400 transition">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold ${item.badgeColor}">${item.badge}</span>
+                <span class="text-xs font-bold text-slate-400">혜택 0${idx + 1}</span>
+              </div>
+              <h5 class="text-base font-bold text-slate-900 font-serif mb-2 flex items-start">
+                <i class="fas ${item.icon} text-blue-700 mr-2 mt-1 shrink-0"></i>
+                <span>${item.title}</span>
+              </h5>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                ${item.desc}
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100">
+              <a href="${item.link}" class="inline-flex items-center text-xs font-bold text-blue-700 hover:text-blue-900">
+                ${item.action} <i class="fas fa-arrow-right ml-1 text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+        </div>
+        <div class="text-center bg-slate-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="text-left text-xs sm:text-sm">
+            <span class="text-sky-400 font-bold block mb-0.5"><i class="fas fa-headset mr-1"></i> 추가 혜택 및 신청 방법이 궁금하신가요?</span>
+            전화 한 통으로 담당 부서에서 신청 방법과 일정을 친절히 상담해 드립니다.
+          </div>
+          <a href="tel:061-540-4033" class="px-5 py-2.5 bg-blue-700 hover:bg-blue-600 text-white font-bold text-xs rounded-xl shrink-0 transition flex items-center">
+            <i class="fas fa-phone mr-1.5"></i> 상담전화 걸기 (061-540-4033)
+          </a>
+        </div>
+      `;
+
+      resultArea.innerHTML = html;
+      resultArea.classList.remove('hidden');
+      resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+</body>
+</html>
